@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'answer.dart';
 
 class Result extends StatelessWidget {
   final int total;
@@ -7,9 +8,14 @@ class Result extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: Text(
-      'Congratualtions on finishing the quiz.\nYou Scored $total / 15',
-    ));
+    return Container(
+      child: Column(children: [
+        Text("Congradulations on finishing the quiz.\nYou Scored $total / 15"),
+        Answer(
+          answerOption: "Reset Quiz",
+          onPress: () => print("yay"),
+        )
+      ]),
+    );
   }
 }
